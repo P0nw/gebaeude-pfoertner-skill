@@ -6,9 +6,15 @@ class GebaeudePfoertner(MycroftSkill):
         MycroftSkill.__init__(self)
 
     @intent_file_handler('pfoertner.gebaeude.intent')
-    def handle_pfoertner_gebaeude(self, message):
+    def handle_pfoertner_gebaeude_oeffnen(self, message):
         self.speak_dialog('pfoertner.gebaeude')
 
+    @intent_file_handler('pfoertner.gebaeude.oeffne.intent')
+    def handle_pfoertner_gebauede_schliessen(self, message):
+        self.speak_dialog("pfoertner.gebaeude.oeffne")
+
+    def stop(self):
+        pass
 
 def create_skill():
     return GebaeudePfoertner()
